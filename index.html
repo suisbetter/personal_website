@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,63 @@
     <title>Personal Website</title>
 </head>
 <body>
+    <style>
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; /* Prevents overflow on smaller screens */
+        }
+
+        .card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin: 1em;
+            padding: 1em;
+            width: 300px;
+            height: 200px;
+            background-color: #374c92;
+            font-family: manrope, sans-serif;
+        }
+
+        /* Centers all headings and text paragraphs inside the cards */
+        .card-content {
+            text-align: center;
+        }
+
+        body {
+            background-image: url('space_bg.jpg');
+            background-size: cover;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 4em;
+            font-family: manrope, sans-serif;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            font-size: 1.5em;
+        }
+
+        p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+    </style>
+
     <h1>Shafi's Website</h1>
+
     <div class="card-container">
         <div class="card">
             <div class="card-content">
@@ -17,19 +74,20 @@
                 <p>Hello! I'm Shafi, a passionate web developer and technology enthusiast. Welcome to my personal website where I share my projects, blog posts, and more.</p>
             </div>
         </div>
+
         <div class="card">
             <div class="card-content">
                 <h2>Current Projects</h2>
                 <p>Here are some of the projects I'm currently working on. Check back soon for updates!</p>
             </div>
         </div>
+
         <div class="card">
             <div class="card-content">
                 <h2>Future Endeavors</h2>
                 <p>Excited about the possibilities ahead! Here's what I'm planning to work on next.</p>
             </div>
         </div>
-    </div>
     </div>
 </body>
 </html>
