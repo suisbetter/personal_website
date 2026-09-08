@@ -1,5 +1,35 @@
-.h1{
-    color: #1a91af;
-    font-family: Arial, sans-serif;
-    font-size: 2em;
-    text-align: center;}
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center; 
+    align-items: center;     
+}
+
+.card {
+    display: flex;             /* Added this */
+    flex-direction: column;    /* Optional: stacks children vertically */
+    justify-content: center;   /* Centers vertically */
+    align-items: center;       /* Centers horizontally */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    margin: 1em;
+    padding: 1em;
+    width: 300px;
+    height: 200px;
+    background-color: #374c92;
+    font-family: manrope, sans-serif;
+}
+
+body {
+  background-image: url('space_bg.jpg');
+  background-size: cover;
+  color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 4em;
+    font-family: manrope, sans-serif;
+}
