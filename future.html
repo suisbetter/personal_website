@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <style>
+        .card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap; 
+        }
+
+        .card {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid rgba(255, 255, 255, 0.2); 
+          border-radius: 8px;
+          box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); 
+          box-sizing: border-box;
+          margin: 1em;
+          padding: 1em;
+          width: 300px;
+          height: 200px;
+          background: rgba(55, 76, 146, 0.35); 
+          backdrop-filter: blur(12px); 
+          -webkit-backdrop-filter: blur(12px);                                                                                   
+          font-family: manrope, sans-serif;
+          transition: transform 0.2s ease, background 0.2s ease;
+}
+
+        .card-content {
+            text-align: center;
+        }
+
+        body {
+            background-image: url('space_bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 4em;
+            font-family: manrope, sans-serif;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+            font-size: 1.5em;
+        }
+
+        p {
+            margin: 0;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .top {
+            font-size: 2em;
+            font-weight: bold;
+        }
+    </style>
+    <h1 class="top">Future Endeavors</h1>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-content">
+                <h2>SB3 Extractor</h2>
+                <p>Building a tool to extract, unpack, and convert Scratch .sb3 project files. Breaking projects down into their sprites, sounds, and assets so they can be analyzed or rebuilt with ease.</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <h2>Aerospace Data Modeling</h2>
+                <p>Applying data science to aerospace systems. Modeling flight data, orbital mechanics, and spacecraft telemetry to find patterns and predict performance.</p>
+            </div>
+        </div>
+    </div>
+    <a href="index.html" style="
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 2em;
+        font-family: manrope, sans-serif;
+        color: white;
+        text-decoration: none;
+        background: rgba(55, 76, 146, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 10px 20px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 1000;
+    " onmouseover="this.style.background='rgba(55, 76, 146, 0.55)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(55, 76, 146, 0.35)'; this.style.transform='none'">&#8592; Home</a>
+</body>
+</html>

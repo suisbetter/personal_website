@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Website</title>
 </head>
 <body>
     <style>
@@ -38,20 +37,7 @@
         .card-link {
             text-decoration: none;
             color: inherit;
-            display: block;
-        }
-
-        .card-link .card {
-            width: 100%;
-            margin: 1em 0;
-        }
-
-        .cards-row {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(200px, 300px));
-            justify-content: center;
-            gap: 20px;
-            align-items: center;
+            display: inline-block;
         }
 
         .card-link:hover .card {
@@ -83,7 +69,7 @@
 
         h1 {
             text-align: center;
-            font-size: 2em;
+            font-size: 4em;
             font-family: manrope, sans-serif;
         }
 
@@ -142,77 +128,40 @@
             line-height: 1.6;
             margin-bottom: 1em;
         }
-
-        .btn {
-            display: inline-block;
-            font-family: manrope, sans-serif;
-            color: white;
-            background: rgba(55, 76, 146, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            transition: background 0.2s ease, transform 0.2s ease;
-        }
-
-        .btn:hover {
-            background: rgba(55, 76, 146, 0.55);
-            transform: translateY(-3px);
-        }
     </style>
+    <a href="index.html" style="
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        font-size: 2em;
+        font-family: manrope, sans-serif;
+        color: white;
+        text-decoration: none;
+        background: rgba(55, 76, 146, 0.35);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 12px;
+        padding: 10px 20px;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transition: background 0.2s ease, transform 0.2s ease;
+        z-index: 1000;
+    " onmouseover="this.style.background='rgba(55, 76, 146, 0.55)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(55, 76, 146, 0.35)'; this.style.transform='none'">&#8592; Home</a>
+    <h1 class="top">About Me</h1>
     <div class="card-container">
         <div class="card title-card">
-            <div class="card-content, top">
-                <h1>Shafi's Website</h1>
-            </div>
-        </div>
-    </div>
-
-    <div class="cards-row">
-        <a href="about.html" class="card-link">
-            <div class="card">
-                <div class="card-content">
-                    <h2>About Me</h2>
-                    <p>Hello! I'm Shafi, a passionate web developer and technology enthusiast. Welcome to my personal website where I share my projects, blog posts, and more.</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="current.html" class="card-link">
-            <div class="card">
-                <div class="card-content">
-                    <h2>Current Projects</h2>
-                    <p>Here are some of the projects I'm currently working on. Check back soon for updates!</p>
-                </div>
-            </div>
-        </a>
-
-        <a href="future.html" class="card-link">
-            <div class="card">
-                <div class="card-content">
-                    <h2>Future Endeavors</h2>
-                    <p>Excited about the possibilities ahead! Here's what I'm planning to work on next.</p>
-                </div>
-            </div>
-        </a>
-    </div>
-
-    <div class="card-container">
-        <div class="card title-card" style="max-width: 900px; height: auto;">
             <div class="card-content">
                 <section class="about-container">
+                    <div class="about-image">
+                        <img src="your-photo.jpg" alt="A professional portrait of Me">
+                    </div>
                     <div class="about-content">
-                        <h2>Find Me Online</h2>
-                        <p>Check out my work and projects across the web:</p>
-                        <p><a href="https://github.com/suisbetter" class="btn" style="text-decoration: none;">GitHub</a></p>
-                        <p><a href="https://scratch.mit.edu/users/udinshmafi" class="btn" style="text-decoration: none;">Scratch</a></p>
+                        <h2>Web Developer & Designer</h2>
+                        <p>Hello! I'm Shafi, a passionate software developer with a keen interest in web development and programming. I enjoy creating innovative solutions and continuously learning new technologies. Welcome to my personal website where you can explore my current projects and future endeavors!</p>
+                        <p>When I'm not coding, you can find me hiking, reading, or experimenting with new recipes.</p>
                     </div>
                 </section>
             </div>
         </div>
     </div>
-
 </body>
 </html>
