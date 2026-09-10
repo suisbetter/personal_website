@@ -6,8 +6,8 @@ hosted by Hack Club and NASA, and uses HTML, inline-css, and Javascript.
 
 ## Features
 
-More to come soon!
+Included an About Me, Current Project, and Future Endeavors sections to personalize my website.
 
 ## Usage Instructions
 
-More to come soon!
+Just peruse through the website at your own pace, and click the home button to go back.
