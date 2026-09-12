@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Projects | Shafi's Website</title>
 </head>
 <body>
     <style>
@@ -143,35 +144,78 @@
         transition: background 0.2s ease, transform 0.2s ease;
         z-index: 1000;
     " onmouseover="this.style.background='rgba(55, 76, 146, 0.55)'; this.style.transform='translateY(-3px)'" onmouseout="this.style.background='rgba(55, 76, 146, 0.35)'; this.style.transform='none'">&#8592; Home</a>
+
+    <script id="projects-data" type="application/json">
+[{"id":1376111367,"title":"Nightguard Test","image":"https://cdn2.scratch.mit.edu/get_image/project/1376111367_480x360.png"},{"id":1165360357,"title":"The Golden Ratio","image":"https://cdn2.scratch.mit.edu/get_image/project/1165360357_480x360.png"},{"id":1079847401,"title":"(A Night at Freddy's) = An ELA 9 Horror Project","image":"https://cdn2.scratch.mit.edu/get_image/project/1079847401_480x360.png"},{"id":1026641998,"title":"Floating Point Numbers Science Project","image":"https://cdn2.scratch.mit.edu/get_image/project/1026641998_480x360.png"},{"id":1018019654,"title":"Floating Point Numbers","image":"https://cdn2.scratch.mit.edu/get_image/project/1018019654_480x360.png"},{"id":852785393,"title":"GlassOS ","image":"https://cdn2.scratch.mit.edu/get_image/project/852785393_480x360.png"}]
+    </script>
     <script>
         const projectsContainer = document.getElementById('projects');
         const status = document.getElementById('status');
-        status.textContent = 'Loading projects...';
 
-        fetch('https://api.scratch.mit.edu/users/udinshmafi/projects')
-            .then(response => response.json())
-            .then(projects => {
-                status.textContent = '';
-                if (!projects.length) {
-                    status.textContent = 'No projects found yet.';
-                    return;
+        function renderProjects(projects) {
+            projectsContainer.innerHTML = '';
+            if (!projects || !projects.length) {
+                status.textContent = 'No projects found yet.';
+                return;
+            }
+            projects.forEach(project => {
+                const cardLink = document.createElement('a');
+                cardLink.className = 'card-link';
+                cardLink.href = 'https://scratch.mit.edu/projects/' + project.id + '/';
+                cardLink.target = '_blank';
+                cardLink.rel = 'noopener noreferrer';
+
+                const card = document.createElement('div');
+                card.className = 'card project-card';
+                card.style.backgroundImage = "url('" + project.image + "')";
+
+                const content = document.createElement('div');
+                content.className = 'card-content';
+                const title = document.createElement('h3');
+                title.textContent = project.title;
+                content.appendChild(title);
+                card.appendChild(content);
+                cardLink.appendChild(card);
+                projectsContainer.appendChild(cardLink);
+            });
+            status.textContent = '';
+        }
+
+        let savedProjects = null;
+        try {
+            savedProjects = JSON.parse(document.getElementById('projects-data').textContent);
+        } catch (e) {
+            savedProjects = null;
+        }
+
+        if (savedProjects && savedProjects.length) {
+            renderProjects(savedProjects);
+        } else {
+            status.textContent = 'Loading projects...';
+        }
+
+        const controller = new AbortController();
+        setTimeout(() => controller.abort(), 10000);
+
+        const apiUrl = 'https://api.scratch.mit.edu/users/udinshmafi/projects?limit=20';
+        fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(apiUrl), { signal: controller.signal })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Bad response');
                 }
-                projects.forEach(project => {
-                    const cardLink = document.createElement('a');
-                    cardLink.className = 'card-link';
-                    cardLink.href = 'https://scratch.mit.edu/projects/' + project.id + '/';
-                    cardLink.target = '_blank';
-                    cardLink.innerHTML = `
-                        <div class="card project-card" style="background-image: url('${project.image}');">
-                            <div class="card-content">
-                                <h3>${project.title}</h3>
-                            </div>
-                        </div>`;
-                    projectsContainer.appendChild(cardLink);
-                });
+                return response.json();
+            })
+            .then(projects => {
+                if (projects && projects.length) {
+                    renderProjects(projects);
+                }
             })
             .catch(() => {
-                status.textContent = "Couldn't load projects. Check your connection and try again.";
+                if (savedProjects && savedProjects.length) {
+                    status.textContent = 'Live refresh unavailable - showing saved projects.';
+                } else {
+                    status.textContent = "Couldn't load projects. Check your connection and try again.";
+                }
             });
     </script>
 </body>
