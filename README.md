@@ -11,3 +11,7 @@ Included an About Me, Current Project, and Future Endeavors sections to personal
 ## Usage Instructions
 
 Just peruse through the website at your own pace, and click the home button to go back.
+
+## Creation History 
+
+Over the course of 2 days I created my website using vs code and some AI assistance to understand basic rules of HTML and CSS. I mainly used w3 schools to understand HTML CSS rules as well as other resources.
