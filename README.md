@@ -14,4 +14,4 @@ Just peruse through the website at your own pace, and click the home button to g
 
 ## Creation History 
 
-Over the course of 2 days I created my website using vs code and some AI assistance to understand basic rules of HTML and CSS. I mainly used w3 schools to understand HTML CSS rules as well as other resources.
+Over the course of 2 days I created my website using VS Code and some AI assistance to understand basic rules of HTML and CSS. I mainly used W3 Schools to understand HTML and CSS rules as well as other resources. I started with a basic HTML boilerplate, and built my website from the ground up, using `<a>` tags to link other pages together. I connected it all by adding a home button so users could go back to the home page.
