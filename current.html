@@ -121,7 +121,7 @@
     <div class="card-container">
         <div class="card title-card">
             <div class="card-content">
-                <p>Here are the projects I'm currently working on, pulled live from my Scratch profile.</p>
+                <p>Here are the projects on my Scratch profile.</p>
             </div>
         </div>
         <div id="projects"></div>
@@ -191,32 +191,8 @@
         if (savedProjects && savedProjects.length) {
             renderProjects(savedProjects);
         } else {
-            status.textContent = 'Loading projects...';
+            status.textContent = "Couldn't load the project list.";
         }
-
-        const controller = new AbortController();
-        setTimeout(() => controller.abort(), 10000);
-
-        const apiUrl = 'https://api.scratch.mit.edu/users/udinshmafi/projects?limit=20';
-        fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(apiUrl), { signal: controller.signal })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Bad response');
-                }
-                return response.json();
-            })
-            .then(projects => {
-                if (projects && projects.length) {
-                    renderProjects(projects);
-                }
-            })
-            .catch(() => {
-                if (savedProjects && savedProjects.length) {
-                    status.textContent = 'Live refresh unavailable - showing saved projects.';
-                } else {
-                    status.textContent = "Couldn't load projects. Check your connection and try again.";
-                }
-            });
     </script>
 </body>
 </html>
